@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sidebar Form + List</title>
+  <link rel="stylesheet" href="form.css" />
+</head>
+<body>
+
+  <main class="main">
+    <div class="header">
+      <div>
+        <h1>Saved Entries</h1>
+        <div class="subtitle">Form থেকে সেভ করা ডেটা এখানে দেখবে</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button id="clearAll" class="btn btn-danger">Clear All</button>
+        <div class="count-badge" id="totalCount">0</div>
+      </div>
+    </div>
+
+    <div id="listContainer"></div>
+  </main>
+
+  <aside class="sidebar">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div>
+        <h2 style="margin:0;font-size:18px">Add New Entry</h2>
+        <div class="helper">নতুন এন্ট্রি যোগ করো — সেভ করলে বাম পাশে লিস্ট আপডেট হবে।</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <form id="entryForm">
+        <div class="field">
+          <label for="fullName">Full Name</label>
+          <input id="fullName" type="text" placeholder="John Doe" required />
+        </div>
+
+        <div class="form-row">
+          <div class="field col">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="example@mail.com" />
+          </div>
+          <div class="field col">
+            <label for="phone">Phone</label>
+            <input id="phone" type="text" placeholder="+8801XXXXXXXXX" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="note">Note</label>
+          <textarea id="note" rows="4" placeholder="Short note (optional)"></textarea>
+        </div>
+
+        <input type="hidden" id="editId" />
+
+        <div class="form-footer">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button id="resetBtn" type="button" class="btn btn-ghost">Reset</button>
+          <div style="flex:1"></div>
+          <div class="helper" id="formState">New entry</div>
+        </div>
+      </form>
+    </div>
+  </aside>
+
+  <script src="form.js"></script>
+</body>
+</html>
